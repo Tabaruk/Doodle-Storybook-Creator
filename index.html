@@ -229,7 +229,6 @@
         <div id="result">Hasil draf cerita dan panduan ilustrasi akan muncul di sini...</div>
     </div>
 
-    <!-- Footer Versi Aplikasi -->
     <div class="app-footer">
         Doodle Storybook Creator &bull; Versi 1.1 | 13.10.2026
     </div>
@@ -279,7 +278,7 @@ Format output per halaman harus jelas mencakup:
                 contents: [{
                     parts: [{ text: userPrompt }]
                 }],
-                systemInstruction: {
+                system_instruction: {
                     parts: [{ text: systemInstruction }]
                 }
             })
@@ -290,7 +289,7 @@ Format output per halaman harus jelas mencakup:
         if (data.candidates && data.candidates[0].content.parts[0].text) {
             resultDiv.innerText = data.candidates[0].content.parts[0].text;
         } else {
-            resultDiv.innerText = 'Terjadi kesalahan saat memproses respons dari Gemini API.';
+            resultDiv.innerText = 'Terjadi kesalahan saat memproses respons dari Gemini API. Periksa kembali API Key Anda.';
         }
     } catch (error) {
         resultDiv.innerText = 'Gagal terhubung ke server: ' + error.message;
